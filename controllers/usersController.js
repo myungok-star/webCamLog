@@ -42,11 +42,26 @@ function show(req, res) {
   });
 }
 
+function update(req, res) {
+  console.log('updating with data', req.body);
+  db.User.findById(req.params.userId, function(err, foundUser) {
+    if(err) { console.log('albumsController.update error', err); }
+    foundUser.userName = req.body.userName;
+    foundUser.email = req.body.email;
+    foundUser.profileUrl = req.body.profileUrl;
+    foundUser.save(function(err, savedUser) {
+      if(err) { console.log('saving altered user info failed'); }
+      res.json(savedUser);
+    });
+  });
+
+}
+
 // export public methods here`
 module.exports = {
   index: index,
   show: show,
   create: create,
-  // update: update,
+  update: update,
   destroy: destroy
 };

@@ -5,24 +5,30 @@ angular
   .module('webcamlog', ['ngRoute'])
   .config(config);
 
+  // var webcamlog = angular.module('webcamlog', ['ngRoute']);
+
 config.$inject = ['$routeProvider', '$locationProvider'];
 
 function config ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: '/templates/landing',
-      controllerAs: 'usersIndexCtrl',
-      controller: 'UsersIndexController'
+      controller: 'UsersIndexController',
+      controllerAs: 'usersIndexCtrl'
     })
     .when('/users', {
       templateUrl: '/templates/users',
-      controllerAs: 'usersIndexCtrl',
-      controller: 'UsersIndexController'
+      controller: 'UsersIndexController',
+      controllerAs: 'usersIndexCtrl'
     })
-    .when('/users/:id', {
+    .when('/users/:userId', {
       templateUrl: '/templates/user-show',
-      controllerAs: 'usersShowCtrl',
-      controller: 'UsersShowController'
+      controller: 'UsersShowController',
+      controllerAs: 'usersShowCtrl'
+    })
+    .when('/record', {
+      templateUrl: '/templates/video-rec'
+
     })
 
 
@@ -31,3 +37,17 @@ function config ($routeProvider, $locationProvider) {
       requireBase: false
   });
 }
+
+
+// webcamlog.controller('UserShowController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+//
+//   $http({
+//       method: 'GET',
+//       url: '/api/user' + user._id
+//   }).then(function successCb(res) {
+//       $scope.user = res.data;
+//   }, function errorCb(res) {
+//       console.log('there was an error getting book data', res);
+//   });
+//
+// }])

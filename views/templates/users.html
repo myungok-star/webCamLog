@@ -12,27 +12,17 @@
               <div class="col-md-4 col-xs-12 col-md-offset-1 thumbnail">
                 <img ng-hide="editing" ng-src="{{user.profileUrl}}" alt="profile image">
                 <input ng-show="editing" ng-model="user.profileUrl" type="text" class="form-control input-md">
-
               </div>
             </div>
             <!-- <div class="row"> -->
-              <ul class="list-group form-inline col-md-10 col-md-offset-1">
-                <li class="list-group-item">
-                  <span ng-hide="editing"><h4 class='inline-header'>User Name: <a ng-href="users/{{user._id}}">{{user.userName}}</a></h4></span>
-                  <input ng-show="editing" ng-model="user.userName" type="text" class="form-control input-md">
-                  <span ng-hide="editing">Email: {{user.email}}</span>
-                  <input ng-show="editing" ng-model="user.email" type="text" class="form-control input-md">
-                </li>
-                <br>
-                <div>
-                  <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit User Info</button>
-                  <button class='btn btn-success' ng-show="editing" ng-click="usersIndexCtrl.editUser(user); editing = false">Save Changes</button>
-                </div>
-                <br>
-                <div>
-                  <button class='btn btn-danger' ng-click="usersIndexCtrl.deleteUser(user)">Delete User</button>
-                </div>
-              </ul>
+            <ul class="list-group form-inline col-md-10 col-md-offset-1">
+              <li class="list-group-item">
+                <span ng-hide="editing"><h4 class='inline-header'>User Name: <a ng-href="users/{{user._id}}">{{user.userName}}</a></h4></span>
+              </li>
+              <li class="list-group-item">
+                <h4 class='inline-header'>Email: {{user.email}}</h4>
+              </li>
+            </ul>
             <!-- </div> -->
 
           </div>

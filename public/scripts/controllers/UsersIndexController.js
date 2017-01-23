@@ -14,23 +14,6 @@ angular
 
     var vm = this;
     vm.newUser = {};
-    // vm.newUser = {
-    //   name: 'Viva Hate',
-    //   artistName: 'Morrissey'
-    // };
-
-    // vm.resetForm = function() {
-    //   $scope.$setPristine();
-    // }
-    // 
-    // vm.resetForm = function(form) {
-    //   //Even when you use form = {} it does not work
-    //   form.userName = null;
-    //   form.email = null;
-    //   form.profileUrl = null;
-    //   ///more fields
-    // }
-
 
 
     $http({
@@ -42,6 +25,20 @@ angular
     }, function errorCallback(response) {
       console.log('There was an error getting the users data', response);
     });
+
+    // vm.showUser = function(user) {
+    //   $http({
+    //     method: 'GET',
+    //     url: '/api/users/' + user._id
+    //   }).then(function successCallback(json) {
+    //     $scope.user = json.data;
+    //     console.log("this is response from UsersShowCtrl : ", json)
+    //     vm.user = json.data;
+    //   }, function errorCallback(response) {
+    //     console.log('There was an error getting the users data', response);
+    //   });
+    //
+    // }
 
     vm.createUser = function () {
       $http({
@@ -59,7 +56,7 @@ angular
     vm.editUser = function (user) {
       $http({
         method: 'PUT',
-        url: '/api/users/'+user._id,
+        url: '/api/users/'+ user._id,
         data: user
       }).then(function successCallback(json) {
         // don't need to do anything!
