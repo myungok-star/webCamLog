@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var VideoSchema = new Schema({
   title: String,
   // time_created: Number,
-  duration: Number,
+  video_url: String,
   _user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 

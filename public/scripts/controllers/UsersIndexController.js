@@ -1,12 +1,14 @@
+console.log("UsersIndexController linked!");
+
 angular
   .module('webcamlog')
   .controller('UsersIndexController', UsersIndexController);
 
 
-  UsersIndexController.$inject = ['$http', '$routeParams', '$location'];
+  UsersIndexController.$inject = ['$http', '$routeParams'];
 
 
-  function UsersIndexController ($http, $routeParams, $location) {
+  function UsersIndexController ($http, $routeParams) {
     var vm = this;
     vm.newUser = {};
     // vm.newUser = {
@@ -18,12 +20,14 @@ angular
       method: 'GET',
       url: '/api/users'
     }).then(function successCallback(response) {
+      console.log("this is response from UsersIndexCtrl : ", response);
       vm.users = response.data;
     }, function errorCallback(response) {
       console.log('There was an error getting the users data', response);
     });
 
     vm.createUser = function () {
+      document.getElementsByClassName('form-reset').value = "";
       $http({
         method: 'POST',
         url: '/api/users',

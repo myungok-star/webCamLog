@@ -5,6 +5,8 @@
 
 .navbar-fixed-top {
     min-height: 80px;
+    background-color: inherit !important;
+
 }
 
 .navbar-nav > li > a {
@@ -13,12 +15,18 @@
     line-height: 80px;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 767px) {
     .navbar-nav > li > a {
     line-height: 20px;
     padding-top: 10px;
     padding-bottom: 10px;}
 }
+
 
 /*.page-scroll:link{
       color: red;

@@ -1,21 +1,23 @@
+console.log("UsersShowController linked!");
 
 angular
   .module('webcamlog')
   .controller('UsersShowController', UsersShowController);
 
 
-UsersShowController.$inject = ['$http', '$routeParams', '$location'];
+UsersShowController.$inject = ['$http', '$routeParams'];
 
 
-function UsersShowController ($http) {
+function UsersShowController ($http, $routeParams) {
   var vm = this;
   vm.newUser = {};
 
   $http({
     method: 'GET',
     url: '/api/users' + user._id
-  }).then(function successCallback(json) {
-    vm.user = json.data;
+  }).then(function successCallback(response) {
+    console.log("this is response from UsersShowCtrl : ", response)
+    vm.user = response.data;
   }, function errorCallback(response) {
     console.log('There was an error getting the users data', response);
   });
