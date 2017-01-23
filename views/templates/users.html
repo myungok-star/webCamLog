@@ -1,0 +1,25 @@
+<h1>This is user.js Displaying all users</h1>
+
+<div ng-repeat="user in usersIndexCtrl.users" class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <div class='row'>
+          <div class="col-md-3 col-xs-12 thumbnail">
+            <img ng-src="{{user.profileUrl}}" alt="profile image">
+          </div>
+        </div>
+        <div class="row">
+          <ul class="list-group form-inline">
+            <li class="list-group-item">
+              <h4 class='inline-header'>User Name: <a ng-href="users/{{user._id}}">{{user.userName}}</a></h4>
+              <span ng-hide="editing">Email: <a ng-href="users/{{user._id}}">{{user.email}}</a></span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
