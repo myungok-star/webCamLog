@@ -11,6 +11,7 @@ function UsersShowController ($http, $routeParams, $scope) {
   console.log("UsersShowController linked!");
   var userId = $routeParams.userId;
 
+
   var vm = this;
   vm.newUser = {};
   $http({

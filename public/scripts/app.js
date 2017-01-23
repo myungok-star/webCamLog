@@ -26,7 +26,7 @@ function config ($routeProvider, $locationProvider) {
       controller: 'UsersShowController',
       controllerAs: 'usersShowCtrl'
     })
-    .when('/record', {
+    .when('/video-rec', {
       templateUrl: '/templates/video-rec'
 
     })

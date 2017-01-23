@@ -36,10 +36,12 @@ app.get('/users', function(req, res) {
 });
 
 app.get('/users/:id', function(req, res) {
-  res.sendFile(__dirname + '/views/index.html', { user: req.user });
+  res.sendFile(__dirname + '/views/index.html');
 });
 
-
+app.get('/video-rec', function(req, res) {
+  res.sendFile(__dirname + '/views/index.html', { user: req.user });
+});
 // app.get('/users/:id', function(req, res){
 //  res.render('index', { user: req.user });
 // });
