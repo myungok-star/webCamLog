@@ -31,17 +31,17 @@ app.get('/templates/:name', function templates(req, res) {
 });
 
 // show user profile page
-app.get('/users/:id', function(req, res) {
-    // find the user currently logged in
-    if (req.session.userId === undefined) {
-        res.redirect('login')
-    }
-    User.findOne({
-        _id: req.session.userId
-    }, function(err, currentUser) {
-        res.render('index.html.ejs')
-    });
-});
+// app.get('/users/:id', function(req, res) {
+//     // find the user currently logged in
+//     if (req.session.userId === undefined) {
+//         res.redirect('login')
+//     }
+//     User.findOne({
+//         _id: req.session.userId
+//     }, function(err, currentUser) {
+//         res.render('index.html.ejs')
+//     });
+// });
 
 /*
  * JSON API Endpoints

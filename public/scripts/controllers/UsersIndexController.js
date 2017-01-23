@@ -8,13 +8,30 @@ angular
   UsersIndexController.$inject = ['$http', '$routeParams'];
 
 
-  function UsersIndexController ($http, $routeParams) {
+
+  function UsersIndexController ($http, $routeParams, $scope, $setPristine) {
+    console.log("UsersIndexController linked!");
+
     var vm = this;
     vm.newUser = {};
     // vm.newUser = {
     //   name: 'Viva Hate',
     //   artistName: 'Morrissey'
     // };
+
+    // vm.resetForm = function() {
+    //   $scope.$setPristine();
+    // }
+    // 
+    // vm.resetForm = function(form) {
+    //   //Even when you use form = {} it does not work
+    //   form.userName = null;
+    //   form.email = null;
+    //   form.profileUrl = null;
+    //   ///more fields
+    // }
+
+
 
     $http({
       method: 'GET',
@@ -27,7 +44,6 @@ angular
     });
 
     vm.createUser = function () {
-      document.getElementsByClassName('form-reset').value = "";
       $http({
         method: 'POST',
         url: '/api/users',
