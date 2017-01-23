@@ -23,3 +23,44 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+
+    <form class="form-horizontal" ng-submit="usersIndexCtrl.createUser()">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend class="text-center">Add New User</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <div class="col-xs-6 col-xs-offset-3">
+          <input id="userName" ng-model="usersIndexCtrl.newUser.userName" type="text" class="form-control input-md" placeholder="User Name" required>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <div class="col-xs-6 col-xs-offset-3">
+          <input ng-model="usersIndexCtrl.newUser.email" type="text" class="form-control input-md" placeholder="Email" required>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <div class="col-xs-6 col-xs-offset-3">
+          <input ng-model="usersIndexCtrl.newUser.profileUrl" type="text" class="form-control input-md" placeholder="Profile Image Url">
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <div class="col-xs-6 col-xs-offset-3">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

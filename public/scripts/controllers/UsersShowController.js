@@ -34,6 +34,7 @@ function UsersShowController ($http) {
   }
 
 
+
   vm.editUser = function (user) {
     $http({
       method: 'PUT',
