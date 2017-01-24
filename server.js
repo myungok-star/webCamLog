@@ -107,6 +107,6 @@ app.delete('/api/videos-rec/:userId', controllers.videos.destroy);
  **********/
 
 // listen on port 3000
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT, function () {
   console.log('Express server is up and running on http://localhost:3000/');
 });
