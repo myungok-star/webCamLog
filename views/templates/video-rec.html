@@ -1,43 +1,59 @@
 <br><br><br>
 <br><br><br>
 
+  <div class="row text-center">
+    <div class="col-xs-11 col-xs-offset-3">
+      <video id="myVideo" class="video-js vjs-default-skin"></video>
+    </div>
+  </div>
 
-<video id="myVideo" class="video-js vjs-default-skin"></video>
 
 <script>
-  var player = videojs("myVideo",
-  {
+  var player = videojs('myVideo', {
       controls: true,
-      width: 320,
-      height: 240,
+      loop: false,
+      // dimensions of video.js player
+      width: 640,
+      height: 360,
       plugins: {
-          record: {
-              audio: true,
-              video: true,
-              maxLength: 10,
-              debug: true
-          }
+        record: {
+          maxLength: 10,
+          debug: true,
+          audio: true,
+          video: {
+            // video constraints: set resolution of camera
+            mandatory: {
+                minWidth: 640,
+                minHeight: 360,
+            },
+          },
+          // dimensions of captured video frames
+          frameWidth: 640,
+          frameHeight: 360
+        }
       }
-  });
+    });
   // error handling
   player.on('deviceError', function()
   {
-      console.log('device error:', player.deviceErrorCode);
+    console.log('device error:', player.deviceErrorCode);
   });
   player.on('error', function(error)
   {
-      console.log('error:', error);
+    console.log('error:', error);
   });
   // user clicked the record button and started recording
   player.on('startRecord', function()
   {
-      console.log('started recording!');
+    console.log('started recording!');
   });
   // user completed recording and stream is available
   player.on('finishRecord', function()
   {
-      // the blob object contains the recorded data that
-      // can be downloaded by the user, stored on server etc.
-      console.log('finished recording: ', player.recordedData);
+    // the blob object contains the recorded data that
+    // can be downloaded by the user, stored on server etc.
+    console.log('finished recording: ', player.recordedData);
+    player.recorder.saveAs({'video': 'your-new-log'});
   });
+
 </script>

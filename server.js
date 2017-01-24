@@ -14,6 +14,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // need to add this so that we can accept request payloads
 app.use(bodyParser.json());
 
+
+// // allow cross origin requests (optional)
+// // https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+// app.use(function(req, res, next) {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+//   next();
+// });
+
 /**********
  * ROUTES *
  **********/
@@ -25,6 +35,7 @@ app.use(bodyParser.json());
  // app.controller('UserShowController', function($scope) {
  //   $scope.user._id = user._id;
  // });
+ app.use('/video-rec', express.static(__dirname + '/node_modules/video.js/dist/'));
 
 
 app.get('/', function homepage (req, res) {
@@ -40,7 +51,7 @@ app.get('/users/:id', function(req, res) {
 });
 
 app.get('/video-rec', function(req, res) {
-  res.sendFile(__dirname + '/views/index.html', { user: req.user });
+  res.sendFile(__dirname + '/views/index.html');
 });
 // app.get('/users/:id', function(req, res){
 //  res.render('index', { user: req.user });

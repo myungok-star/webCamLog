@@ -12,7 +12,9 @@
     "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "mongoose": "^4.7.7",
+    "recordrtc": "^5.4.0",
     "recordrtc-nodejs": "^1.0.1",
+    "video.js": "^5.15.1",
     "videojs-record": "^1.5.2"
   }
 }

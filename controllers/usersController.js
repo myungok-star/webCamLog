@@ -28,7 +28,7 @@ function create(req, res) {
 function show(req, res) {
   db.User.findById(req.params.userId, function(err, foundUser) {
     if(err) { console.log('usersController.show error', err); }
-    console.log('usersController.show responding with', foundUser);
+    // console.log('usersController.show responding with', foundUser);
     res.json(foundUser);
   });
 }
