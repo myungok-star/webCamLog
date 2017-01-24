@@ -35,8 +35,11 @@ app.use(bodyParser.json());
  // app.controller('UserShowController', function($scope) {
  //   $scope.user._id = user._id;
  // });
- app.use('/video-rec', express.static(__dirname + '/node_modules/video.js/dist/'));
+app.use('/video-rec', express.static(__dirname + '/node_modules/video.js/dist/'));
 
+app.get('/videos', function(req, res) {
+ res.sendFile(__dirname + '/views/index.html');
+});
 
 app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
@@ -88,9 +91,10 @@ app.post('/api/users', controllers.users.create);
 app.delete('/api/users/:userId', controllers.users.destroy);
 app.put('/api/users/:userId', controllers.users.update);
 
-app.get('/api/videos/:userId', controllers.videos.index);
-app.post('/api/videos/:userId', controllers.videos.create);
-app.delete('/api/videos/:userId', controllers.videos.destroy);
+app.get('/api/videos', controllers.videos.index);
+app.get('/api/videos-rec/:userId', controllers.videos.show);
+app.post('/api/videos', controllers.videos.create);
+app.delete('/api/videos-rec/:userId', controllers.videos.destroy);
 
 
 // app.get('/templates/:name', function templates(req, res) {

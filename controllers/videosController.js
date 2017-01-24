@@ -1,10 +1,17 @@
+/************
+ * DATABASE *
+ ************/
+
 var db = require('../models');
 
-// Get all videos
+
+// Get All Videos
 function index(req, res) {
-  db.Video.findById(req.params.userId, function(err, foundVideo) {
-    console.log('responding with videos:', foundVideo);
-    res.json(foundVideo);
+  db.Video.find({},function(err, videos) {
+    if (err) {
+      return console.log('Get videos error: ' + err);
+    }
+    res.json(videos);
   });
 }
 

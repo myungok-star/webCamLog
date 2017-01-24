@@ -27,8 +27,14 @@ function config ($routeProvider, $locationProvider) {
       controllerAs: 'usersShowCtrl'
     })
     .when('/video-rec', {
-      templateUrl: '/templates/video-rec'
-
+      templateUrl: '/templates/video-rec',
+      controller: 'VideosIndexController',
+      controllerAs: 'videosIndexCtrl'
+    })
+    .when('/videos', {
+      templateUrl: '/templates/videos',
+      controller: 'VideosIndexController',
+      controllerAs: 'videosIndexCtrl'
     })
 
 

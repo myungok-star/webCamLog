@@ -1,13 +1,13 @@
 <br><br><br>
 <br><br><br>
+<br><br><br>
 <div class="col-xs-10 col-xs-offset-1">
-  <h1>User Page</h1>
   <!-- <div ng-controller="UsersShowController as usersShowCtrl" class='row'> -->
-    <div class="col-md-3 col-xs-12 thumbnail">
+    <div class="col-md-3 col-md-offset-3 col-xs-12 thumbnail">
       <img ng-src="{{usersShowCtrl.user.profileUrl}}" alt="user image">
     </div>
 
-    <div class="col-md-9 col-xs-12">
+    <div class="col-md-3  col-xs-12">
       <ul class="list-group form-inline col-md-10 col-md-offset-1">
         <li class="list-group-item">
           <span ng-hide="editing"><h4 class='inline-header'>User Name: {{user.userName}}</h4></span>
@@ -15,6 +15,7 @@
           <span ng-hide="editing">Email: {{user.email}}</span>
           <input ng-show="editing" ng-model="user.email" type="text" class="form-control input-md">
         </li>
+        <br>
         <br>
         <div>
           <button class='btn btn-info' ng-hide="editing" ng-click="editing = true">Edit User Info</button>
@@ -25,7 +26,7 @@
           <button class='btn btn-danger' ng-click="usersShowCtrl.deleteUser(user)">Delete User</button>
         </div>
         <br>
-        <button class='btn btn-primary' ng-href="/video-rec">Record  Video</button>
+        <!-- <button class='btn btn-primary' id="recBtn">Record  Video</button> -->
         <h3><a href="/video-rec">Record Video</a></h3>
       </ul>
 
@@ -34,38 +35,38 @@
   <!-- </div> -->
 
   <!-- Creating new video -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-10 col-md-offset-1">
 
       <form class="form-horizontal" ng-submit="usersIndexCtrl.createUser()">
-        <fieldset>
+        <fieldset> -->
 
           <!-- Form Name -->
-          <legend class="text-center">Add New Video</legend>
+          <!-- <legend class="text-center">Add New Video</legend> -->
 
           <!-- Text input-->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-xs-6 col-xs-offset-3">
             <input id="userName" ng-model="videosIndexCtrl.newVideo.title" type="text" class="form-control input-md" placeholder="Title" required>
             </div>
-          </div>
+          </div> -->
 
           <!-- Text input-->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-xs-6 col-xs-offset-3">
             <input ng-model="videosIndexCtrl.newVideo.video_url" type="text" class="form-control input-md" placeholder="Link Url" required>
             </div>
-          </div>
+          </div> -->
 
           <!-- Text input-->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-xs-6 col-xs-offset-3">
             <input ng-model="videosIndexCtrl.newVideo._user" type="text" class="form-control input-md" placeholder="Hidden from for user id">
             </div>
-          </div>
+          </div> -->
 
           <!-- Button -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-xs-6 col-xs-offset-3">
               <button class="btn btn-primary">Submit</button>
             </div>
@@ -73,5 +74,5 @@
         </fieldset>
       </form>
     </div>
-  </div>
+  </div> -->
 </div>

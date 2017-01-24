@@ -1,4 +1,8 @@
 console.log("videojs.record.js linked");
+/// line 202 video data to URL
+
+
+
 
 (function (root, factory)
 {
@@ -191,7 +195,7 @@ console.log("videojs.record.js linked");
         onStopRecording: function(data)
         {
             this.recordedData = data;
-
+            console.log("this is videojs.record.js recordedData : ", data);
             this.addFileInfo(this.recordedData);
 
             // store reference to recorded stream URL
@@ -295,6 +299,9 @@ console.log("videojs.record.js linked");
             // store reference to recorded stream URL
             this.mediaURL = audioVideoURL;
 
+            console.log("this is videojs.record.js audioVideoURL : ", audioVideoURL);
+
+
             // store reference to recorded stream data
             var recordType = this.player().recorder.getRecordType();
             this.engine.getBlob(function(recording)
@@ -305,6 +312,7 @@ console.log("videojs.record.js linked");
                         this.recordedData = recording.audio;
 
                         this.addFileInfo(this.recordedData);
+
 
                         // notify listeners
                         this.trigger('recordComplete');
@@ -328,6 +336,7 @@ console.log("videojs.record.js linked");
                             {
                                 // store both audio and video
                                 this.recordedData = recording;
+                                console.log("this is videojs.record.js recording : ", recording);
 
                                 for (var mtype in this.recordedData)
                                 {

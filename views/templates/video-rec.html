@@ -1,14 +1,79 @@
-<br><br><br>
-<br><br><br>
-
-  <div class="row text-center">
-    <div class="col-xs-11 col-xs-offset-3">
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+  <div class="row">
+    <div class="col-xs-12 col-xl-pull-5">
       <video id="myVideo" class="video-js vjs-default-skin"></video>
     </div>
   </div>
 
+  <br><br><br>
+  <br><br>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      <form class="form-horizontal" name="userNew" ng-submit="videosIndexCtrl.createVideo()">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend class="text-center">Add New Video</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-xs-6 col-xs-offset-3">
+            <input id="videoTitle" ng-model="videosIndexCtrl.newVideo.title" type="text" class="form-control input-md form-reset" placeholder="Title" required>
+            </div>
+          </div>
+
+          <!-- Video input-->
+          <div class="form-group">
+            <div class="col-xs-6 col-xs-offset-3">
+            <input ng-model="videosIndexCtrl.videoContent" type="hidden" name="videoContent" class="form-control input-md form-reset" value="{{videoContent}}" >
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <!-- <div class="form-group">
+            <div class="col-xs-6 col-xs-offset-3">
+            <input ng-model="videosIndexCtrl._user" type="text" class="form-control input-md form-reset" placeholder="Profile Image Url">
+            </div>
+          </div> -->
+
+          <!-- Button -->
+          <div class="form-group">
+            <div class="col-xs-6 col-xs-offset-3">
+              <button class="btn btn-primary" >Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 
 <script>
+
+
+// function upload(blobFile) {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open('POST', '/api/videos', true);
+//   xhr.onload = function(e) { ... };
+//
+//   // Listen to the upload progress.
+//   var progressBar = document.querySelector('progress');
+//   xhr.upload.onprogress = function(e) {
+//     if (e.lengthComputable) {
+//       progressBar.value = (e.loaded / e.total) * 100;
+//       progressBar.textContent = progressBar.value; // Fallback for unsupported browsers.
+//     }
+//   };
+//
+//   xhr.send(blobFile);
+// }
+
+
+
+var videoContent;
+
   var player = videojs('myVideo', {
       controls: true,
       loop: false,
@@ -53,7 +118,28 @@
     // the blob object contains the recorded data that
     // can be downloaded by the user, stored on server etc.
     console.log('finished recording: ', player.recordedData);
+    console.log('finished recording and drilling down the file structure player.recordedData.video : ', player.recordedData.video);
+    videoContent = player.recordedData.video;
+
+    // upload(new Blob([videoContent], {type: videoContent.type}));
+    console.log('this is videoContent : ', videoContent);
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('POST', '/api/videos-rec');
+    // xhr.send(player.recordedData);
+    // xhr.onreadystatechange = function () {
+    //   var DONE = 4; // readyState 4 means the request is done.
+    //   var OK = 200; // status 200 is a successful return.
+    //   if (xhr.readyState === DONE) {
+    //     if (xhr.status === OK)
+    //       console.log(xhr.responseText); // 'This is the returned text.'
+    //     } else {
+    //       console.log('Error: ' + xhr.status); // An error occurred during the request.
+    //     }
+    //   }
+    // };
+
     player.recorder.saveAs({'video': 'your-new-log'});
   });
+
 
 </script>

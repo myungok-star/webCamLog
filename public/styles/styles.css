@@ -46,7 +46,9 @@ img {
 }
 
 
-
+#myVideo {
+   left: 32% !important;
+}
 
 /* place fullscreen control on right side of the player */
 .video-js .vjs-control.vjs-fullscreen-control {

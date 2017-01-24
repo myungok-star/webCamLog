@@ -13,6 +13,30 @@ var user_lists = [
   }
 ];
 
+var video_lists = [
+  {
+    title: "video log one"
+  },
+  {
+    title: "video log two"
+  },
+  {
+    title: "video log three"
+  }
+];
+
+db.Video.remove({}, function(err, video) {
+  if(err) {
+    console.log('Error occurred in remove', err);
+  } else {
+    console.log('Removed all videos');
+    db.Video.create(video_lists, function(err, video) {
+      if (err) { return console.log('err', err); }
+      console.log('Created ' + video.length + ' videos');
+      process.exit();
+    });
+  }
+});
 
 db.User.remove({}, function(err, user) {
   if(err) {
