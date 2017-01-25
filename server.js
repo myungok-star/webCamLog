@@ -73,7 +73,7 @@ app.use(bodyParser.json());
 //   protocol: 'https',
 //   hostname: 'www.dropbox.com',
 //   pathname: '1/oauth2/authorize',
-//   query: { client_id: "p2o1rz1ns8hp85r",
+//   query: { client_id: "",
 //   response_type: 'code',
 //   state: csrfToken,
 //   redirect_uri: generateRedirectURI(req)
@@ -89,7 +89,7 @@ app.use(bodyParser.json());
 //     return res.status(401).send( 'CSRF token mismatch, possible cross-site request forgery attempt.' );
 //   } request.post('https://api.dropbox.com/1/oauth2/token', {
 //       form: { code: req.query.code, grant_type: 'authorization_code', redirect_uri: generateRedirectURI(req) },
-//       auth: { user: "p2o1rz1ns8hp85r", pass: "9ejbklji8mguhhi" }
+//       auth: { user: "", pass: "" }
 //     },
 //     function (error, response, body) {
 //       var data = JSON.parse(body);
@@ -119,7 +119,7 @@ app.use(bodyParser.json());
 //    });
 //
 //    function fileupload(token, content) {
-//      request.put('https://api-content.dropbox.com/1/files_put/auto/p2o1rz1ns8hp85r', {
+//      request.put('https://api-content.dropbox.com/1/files_put/auto/', {
 //        headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'text/plain'}, body:content}, function optionalCallback(err, httpResponse, bodymsg) {
 //          if(err) {
 //            console.log(err);
