@@ -11,10 +11,8 @@
   <br><br>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-
       <form class="form-horizontal" name="userNew" ng-submit="videosIndexCtrl.createVideo()">
         <fieldset>
-
           <!-- Form Name -->
           <legend class="text-center">Add New Video</legend>
 
@@ -47,29 +45,27 @@
           </div>
         </fieldset>
       </form>
+      <br><br><hr>
+      <!-- <div class="col-xs-6 col-xs-offset-3">
+      <h1>File Upload Form</h1>
+        <form id="uploadForm"
+          enctype="multipart/form-data"
+          action="https://api-content.dropbox.com/1/files_put/auto/p2o1rz1ns8hp85r"
+          method="post">
+          <input type="file" name="videoData" value="test string"/>
+          <input type="submit" value="Upload Video" name="submit">
+          <span id = "status"></span>
+        </form>
+      </div> -->
     </div>
   </div>
 
+  <br><br><br>
+  <br><br><br>
+  <br><br><br>
+
+
 <script>
-
-
-// function upload(blobFile) {
-//   var xhr = new XMLHttpRequest();
-//   xhr.open('POST', '/api/videos', true);
-//   xhr.onload = function(e) { ... };
-//
-//   // Listen to the upload progress.
-//   var progressBar = document.querySelector('progress');
-//   xhr.upload.onprogress = function(e) {
-//     if (e.lengthComputable) {
-//       progressBar.value = (e.loaded / e.total) * 100;
-//       progressBar.textContent = progressBar.value; // Fallback for unsupported browsers.
-//     }
-//   };
-//
-//   xhr.send(blobFile);
-// }
-
 
 
 var videoContent;
@@ -122,24 +118,35 @@ var videoContent;
     videoContent = player.recordedData.video;
 
     // upload(new Blob([videoContent], {type: videoContent.type}));
-    console.log('this is videoContent : ', videoContent);
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/api/videos-rec');
-    // xhr.send(player.recordedData);
-    // xhr.onreadystatechange = function () {
-    //   var DONE = 4; // readyState 4 means the request is done.
-    //   var OK = 200; // status 200 is a successful return.
-    //   if (xhr.readyState === DONE) {
-    //     if (xhr.status === OK)
-    //       console.log(xhr.responseText); // 'This is the returned text.'
-    //     } else {
-    //       console.log('Error: ' + xhr.status); // An error occurred during the request.
-    //     }
-    //   }
-    // };
+    console.log('this is videoContent : ', videoContent.name);
 
     player.recorder.saveAs({'video': 'your-new-log'});
   });
 
 
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script>
+$(document).ready(function() {
+
+   $('#uploadForm').submit(function() {
+   $("#status").empty().text("File is uploading...");
+    console.log($('#uploadForm').val());
+      $(this).ajaxSubmit({
+
+          error: function(xhr) {
+              status('Error: ' + xhr.status);
+          },
+
+          success: function(response) {
+        console.log(response)
+        $("#status").empty().text(response);
+          }
+      });
+
+      return false;
+        });
+  }); //end ready
 </script>

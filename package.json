@@ -10,8 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.0",
+    "dropbox": "^2.5.0",
     "express": "^4.14.0",
+    "file-system": "^2.2.2",
     "mongoose": "^4.7.7",
+    "multer": "^1.2.1",
+    "node-dropbox": "^0.1.8",
     "recordrtc": "^5.4.0",
     "recordrtc-nodejs": "^1.0.1",
     "video.js": "^5.15.1",

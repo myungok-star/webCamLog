@@ -36,7 +36,16 @@ function config ($routeProvider, $locationProvider) {
       controller: 'VideosIndexController',
       controllerAs: 'videosIndexCtrl'
     })
-
+    .when('/uploadfile', {
+      templateUrl: '/templates/dropbox-upload'
+      // controller: 'VideosIndexController',
+      // controllerAs: 'videosIndexCtrl'
+    })
+    // .when('/upload', {
+    //   templateUrl: '/templates/upload'
+    //   // controller: 'VideosIndexController',
+    //   // controllerAs: 'videosIndexCtrl'
+    // })
 
     $locationProvider.html5Mode({
       enabled: true,

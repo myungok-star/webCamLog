@@ -26,7 +26,7 @@ angular
 
     vm.createVideo = function () {
       $http({
-        method: 'POST',
+        method: 'PUT',
         url: '/api/videos',
         data: vm.newVideo,
       }).then(function successCallback(response) {
@@ -49,5 +49,19 @@ angular
         console.log('There was an error deleting the video data', response);
       });
     }
+
+    // vm.postVideo = function () {
+    //   $http({
+    //     method: 'PUT',
+    //     url: '/api/videos',
+    //     data: vm.newVideo,
+    //   }).then(function successCallback(response) {
+    //     vm.videos.push(response.data);
+    //     // $('reset').val('');
+    //   }, function errorCallback(response) {
+    //     console.log('There was an error posting the video data', response);
+    //   });
+    // }
+
 
   }
