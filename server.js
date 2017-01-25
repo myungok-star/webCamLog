@@ -106,7 +106,7 @@ app.use(bodyParser.json());
 //   });
 //
 //
-//   app.get('/uploadfile', function (req, res) { //var serverpath = p2o1rz1ns8hp85r;//file to be save at what path in server
+//   app.get('/uploadfile', function (req, res) { //var serverpath;//file to be save at what path in server
 //      var localpath = "./public/images";//path of the file which is to be uploaded
 //      if (req.query.error) {
 //        return res.send('ERROR ' + req.query.error + ': ' + req.query.error_description);
