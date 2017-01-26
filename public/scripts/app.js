@@ -12,7 +12,7 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/templates/landing',
+      templateUrl: '/templates/landing.html.ejs',
       controller: 'UsersIndexController',
       controllerAs: 'usersIndexCtrl'
     })
@@ -41,7 +41,19 @@ function config ($routeProvider, $locationProvider) {
       controller: 'VideosShowController',
       controllerAs: 'videosShowCtrl'
     })
-
+    .when('/profile', {
+      templateUrl: "templates/user-view.ejs",
+      controller: 'UsersShowController'
+    })
+    .when('/login', {
+      templateUrl: 'templates/login.ejs',
+    })
+    .when('/logout', {
+      redirectTo: '/'
+    })
+    .when('/signup', {
+      templateUrl: "templates/signup.ejs"
+    })
 
     $locationProvider.html5Mode({
       enabled: true,

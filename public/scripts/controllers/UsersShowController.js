@@ -26,6 +26,20 @@ function UsersShowController ($http, $routeParams, $scope) {
     console.log('There was an error getting the users data', response);
   });
 
+
+  // vm.authenticateUser = function () {
+  //   $http({
+  //     method: 'POST',
+  //     url: '/sessions',
+  //     data: vm.newUser,
+  //   }).then(function successCallback(response) {
+  //     vm.users.push(response.data);
+  //     // $('reset').val('');
+  //   }, function errorCallback(response) {
+  //     console.log('There was an error posting the user data', response);
+  //   });
+  // }
+
   vm.editUser = function (user) {
     $http({
       method: 'PUT',

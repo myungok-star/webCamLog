@@ -3,7 +3,7 @@
  ************/
 
 var db = require('../models');
-
+// var session = require('express-session');
 
 // Get All Users
 function index(req, res) {
@@ -56,6 +56,19 @@ function update(req, res) {
   });
 
 }
+
+// function authenticate(req, res) {
+//   // use the email and password to authenticate here
+//   db.User.authenticate(req.body.email, req.body.password, function (err, loggedInUser) {
+//     if (err){
+//       console.log('authentication error: ', err);
+//       res.status(500).send();
+//     } else {
+//       req.session.userId = loggedInUser._id;
+//       res.redirect('/profile');
+//     }
+//   });
+// }
 
 // export public methods here`
 module.exports = {

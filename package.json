@@ -9,9 +9,12 @@
   "author": "yasu",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.16.0",
     "dropbox": "^2.5.0",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
+    "express-session": "^1.15.0",
     "file-system": "^2.2.2",
     "mongoose": "^4.7.7",
     "multer": "^1.2.1",

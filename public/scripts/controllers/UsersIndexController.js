@@ -7,8 +7,6 @@ angular
 
   UsersIndexController.$inject = ['$http', '$routeParams'];
 
-
-
   function UsersIndexController ($http, $routeParams, $scope, $setPristine) {
     console.log("UsersIndexController linked!");
 
@@ -39,6 +37,20 @@ angular
         console.log('There was an error posting the user data', response);
       });
     }
+
+    vm.authenticateUser = function () {
+      $http({
+        method: 'POST',
+        url: '/sessions',
+        data: vm.newUser,
+      }).then(function successCallback(response) {
+        vm.users.push(response.data);
+        // $('reset').val('');
+      }, function errorCallback(response) {
+        console.log('There was an error posting the user data', response);
+      });
+    }
+
 
 
   }

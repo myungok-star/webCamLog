@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img class="main-photo" src="http://i.imgur.com/pRbLIuB.png" alt="main-photo">
+  </div>
+
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Simple Login</h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <a href="/signup">Sign Up</a>
+        </div>
+        <div class="col-md-2">
+          <a href="/login">Log In</a>
+        </div>
+        <div class="col-md-2">
+          <a href="/profile">Profile</a>
+        </div>
+        <div class="col-md-2">
+          <a href="/logout">Log Out</a>
+        </div>
+      </div>
+      <h3>Here's a list of all the users:</h3>
+      <% for (var i=0; i < users.length; i++) { %>
+        <%= users[i].email %><br>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Log In</h1>
+        <hr>
+
+        <form id="login-form" method="POST" action="/sessions">
+          <div class="form-group">
+            <input type="text" name="email" class="form-control" placeholder="Email" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Log In" class="btn btn-primary">
+          </div>
+          <a href="/signup">Sign Up</a>
+        </form>
+      </div>
+    </div>
+  </div>
