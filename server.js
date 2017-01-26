@@ -72,7 +72,7 @@ app.post('/api/users', controllers.users.create);
 app.delete('/api/users/:userId', controllers.users.destroy);
 app.put('/api/users/:userId', controllers.users.update);
 
-// app.put('/api/videos/:videoId', controllers.videos.update);
+app.put('/api/videos/:videoId', controllers.videos.update);
 app.get('/api/videos', controllers.videos.index);
 app.get('/api/videos/:videoId', controllers.videos.show);
 app.post('/api/videos', controllers.videos.create);

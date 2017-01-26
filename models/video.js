@@ -22,9 +22,6 @@ var VideoSchema = new Schema({
  //      required: true
  //  }
 
- // var schema = new Schema({
- //     img: { data: Buffer, contentType: String }
- // });
 
 
 var Video = mongoose.model('Video', VideoSchema);

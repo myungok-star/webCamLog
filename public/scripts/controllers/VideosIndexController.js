@@ -42,7 +42,7 @@ angular
       console.log("this is editVideo's video", video);
       $http({
         method: 'PUT',
-        url: '/api/videos/'+ videoId,
+        url: '/api/videos/'+ video._id,
         data: video
       }).then(function successCallback(json) {
         // don't need to do anything!
@@ -54,7 +54,7 @@ angular
     vm.deleteVideo = function (video) {
       $http({
         method: 'DELETE',
-        url: '/api/videos/'+ videoId
+        url: '/api/videos/'+ video._id
       }).then(function successCallback(json) {
         var index = vm.videos.indexOf(video);
         vm.videos.splice(index,1);

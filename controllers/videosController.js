@@ -38,7 +38,8 @@ function update(req, res) {
   db.Video.findById(req.params.videoId, function(err, foundVideo) {
     if(err) { console.log('albumsController.update error', err); }
     foundVideo.title = req.body.title;
-    // foundVideo.screenShot = req.body.screenShot;
+    foundVideo.screenShot = req.body.screenShot;
+    foundVideo.videoLink = req.body.videoLink;
     foundVideo.save(function(err, savedVideo) {
       if(err) { console.log('saving altered user info failed'); }
       res.json(savedVideo);
@@ -47,8 +48,8 @@ function update(req, res) {
 }
 
 // Delete a current video
-  function destroy(req, res) {
-  db.Video.findOneAndRemove({_id: req.params.userId}, function(err, video) {
+function destroy(req, res) {
+  db.Video.findOneAndRemove({_id: req.params.videoId}, function(err, video) {
     console.log('sever error ', err)
     res.send("Successfully deleted!")
   });
@@ -59,5 +60,6 @@ module.exports = {
   index: index,
   create: create,
   show: show,
-  destroy: destroy
+  destroy: destroy,
+  update: update
 };

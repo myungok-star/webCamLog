@@ -4,10 +4,10 @@ angular
   .controller('VideosShowController', VideosShowController);
 
 
-VideosShowController.$inject = ['$http', '$routeParams', '$scope'];
+VideosShowController.$inject = ['$http', '$routeParams', '$scope', '$location'];
 
 
-function VideosShowController ($http, $routeParams, $scope) {
+function VideosShowController ($http, $routeParams, $scope, $location) {
   console.log("VideosShowController linked!");
   var videoId = $routeParams.videoId;
 
@@ -45,8 +45,7 @@ function VideosShowController ($http, $routeParams, $scope) {
       method: 'DELETE',
       url: '/api/videos/'+ videoId
     }).then(function successCallback(json) {
-      var index = vm.videos.indexOf(video);
-      vm.videos.splice(index,1);
+      $location.path("/videos");
     }, function errorCallback(response) {
       console.log('There was an error deleting the video data', response);
     });

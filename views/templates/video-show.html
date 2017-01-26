@@ -4,15 +4,16 @@
 <div class="col-xs-10 col-xs-offset-1">
   <!-- <div ng-controller="UsersShowController as usersShowCtrl" class='row'> -->
     <div class="col-md-3 col-md-offset-3 col-xs-12 thumbnail">
-      <img ng-src="{{videosShowCtrl.video.screenShot}}" alt="user image">
-      <input ng-show="editing" ng-model="video.screenShot" type="text" class="form-control input-md">
+      <img ng-hide="editing" ng-src="{{video.screenShot}}" alt="screen shot">
+      <input ng-show="editing" ng-model="video.screenShot" type="text" class="form-control input-md"><h6 ng-show="editing">screenshot link ^</h6>
     </div>
 
     <div class="col-md-3  col-xs-12">
       <ul class="list-group form-inline col-md-10 col-md-offset-1">
         <li class="list-group-item">
-          <span ng-hide="editing"><h4 class='inline-header'><a ng-href="{{video.videoLink}}">{{video.title}}</h4></span>
-          <input ng-show="editing" ng-model="user.userName" type="text" class="form-control input-md">
+          <span ng-hide="editing"><h3 class='inline-header'><a ng-href="videos/{{video._id}}">{{video.title}}</a></h3></span>
+          <input ng-show="editing" ng-model="video.title" type="text" class="form-control input-md"><h6 ng-show="editing">video title ^</h6>
+          <input ng-show="editing" ng-model="video.videoLink" type="text" class="form-control input-md"><h6 ng-show="editing">video link ^</h6>
         </li>
         <br>
         <br>
@@ -22,7 +23,7 @@
         </div>
         <br>
         <div>
-          <button class='btn btn-danger' ng-click="usersShowCtrl.deleteUser(user)">Delete Video</button>
+          <button class='btn btn-danger' ng-click="videosShowCtrl.deleteVideo(video)">Delete Video</button>
         </div>
         <br>
         <h3><a href="/videos">Back</a></h3>
