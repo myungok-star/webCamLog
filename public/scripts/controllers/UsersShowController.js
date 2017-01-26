@@ -26,7 +26,6 @@ function UsersShowController ($http, $routeParams, $scope) {
     console.log('There was an error getting the users data', response);
   });
 
-
   vm.editUser = function (user) {
     $http({
       method: 'PUT',

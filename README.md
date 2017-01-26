@@ -29,6 +29,10 @@ https://github.com/videojs/video.js
 https://github.com/collab-project/videojs-recordÂÂ
 
 ##User Stories
+* User can record video through webcam on their device.
+* User can edit video title and delete videos.
+* User can edit their profile.
+* User can have own page.
 
 ##ERD
 ![alt tag](http://i.imgur.com/MgMbb69.png)
@@ -41,14 +45,4 @@ https://github.com/collab-project/videojs-recordÂÂ
 * Creating private user account.
 * User can share videos and can leave comments.
 * Record geo locations of where videos were recorded and display on a map.
-*
-
-
-A link to your hosted working app.
-A paragraph-long description (elevator pitch) of your project.
-A list of the technologies used.
-A list of installation steps for the app itself and any dependencies - how would another developer run your site locally?
-Link to your user stories - who are your users, what do they want, and why?
-Link to your wireframes – sketches of major views / interfaces in your application.
-Link to your entity relationship diagrams – plan out your data relationships before coding.
-Descriptions of any unsolved problems or future features.
+* User can video chat with other users.
