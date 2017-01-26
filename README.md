@@ -10,7 +10,9 @@ https://fierce-sierra-85118.herokuapp.com/
 * MongoDB
 * AngularJS
 
-##Dependency
+##Dependency & Instructions
+* In order to make your webcam work, you need to click x mark in your URL bar to accept loading unsafe script.
+![alt tag](http://i.imgur.com/5pP38jg.png =250x)
 This project uses node and npm, and it also requires dependencies below.<br /> Go check them out if you don't have them locally installed.<br />
 
 Node<br />
@@ -35,10 +37,10 @@ https://github.com/collab-project/videojs-recordÂÂ
 * User can have own page.
 
 ##ERD
-![alt tag](http://i.imgur.com/MgMbb69.png)
+![alt tag](http://i.imgur.com/MgMbb69.png =300x)
 
 ##Wireframe
-![alt tag](http://i.imgur.com/a8vaw5h.png)
+![alt tag](http://i.imgur.com/a8vaw5h.png =300x)
 
 ##Unsolved Problems:
 * Storing user videos in a database.
