@@ -6,10 +6,10 @@ angular
   .controller('VideosIndexController', VideosIndexController);
 
 
-  VideosIndexController.$inject = ['$http', '$routeParams', '$scope'];
+  VideosIndexController.$inject = ['$http', '$routeParams', '$scope', '$location'];
 
 
-  function VideosIndexController ($http, $routeParams, $scope) {
+  function VideosIndexController ($http, $routeParams, $scope, $location) {
     var vm = this;
     vm.newVideo = {};
     var videoId = $routeParams.videoId;
@@ -31,37 +31,11 @@ angular
         url: '/api/videos',
         data: vm.newVideo,
       }).then(function successCallback(response) {
-        vm.videos.push(response.data);
-        // $('reset').val('');
+        $location.path("/videos");
+        // vm.videos.push(response.data);
       }, function errorCallback(response) {
         console.log('There was an error posting the video data', response);
       });
     }
-
-    vm.editVideo = function (video) {
-      console.log("this is editVideo's video", video);
-      $http({
-        method: 'PUT',
-        url: '/api/videos/'+ video._id,
-        data: video
-      }).then(function successCallback(json) {
-        // don't need to do anything!
-      }, function errorCallback(response) {
-        console.log('There was an error editing the data', response);
-      });
-    }
-
-    vm.deleteVideo = function (video) {
-      $http({
-        method: 'DELETE',
-        url: '/api/videos/'+ video._id
-      }).then(function successCallback(json) {
-        var index = vm.videos.indexOf(video);
-        vm.videos.splice(index,1);
-      }, function errorCallback(response) {
-        console.log('There was an error deleting the video data', response);
-      });
-    }
-
 
   }
