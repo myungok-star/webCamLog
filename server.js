@@ -18,6 +18,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
+// allow cross origin requests (optional)
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  next();
+});
+
+
 /**********
  * ROUTES *
  **********/
