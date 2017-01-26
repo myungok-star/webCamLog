@@ -12,7 +12,7 @@ https://fierce-sierra-85118.herokuapp.com/
 
 ##Dependency & Instructions
 * In order to make your webcam work, you need to click x mark in your URL bar to accept loading unsafe script.
-![alt tag](http://i.imgur.com/5pP38jg.png =250x)
+![alt tag](http://i.imgur.com/5pP38jg.png width="200")
 This project uses node and npm, and it also requires dependencies below.<br /> Go check them out if you don't have them locally installed.<br />
 
 Node<br />
@@ -28,7 +28,7 @@ https://github.com/muaz-khan/RecordRTC
 https://github.com/videojs/video.js
 
 "videojs-record"<br />
-https://github.com/collab-project/videojs-recordÂÂ
+https://github.com/collab-project/videojs-record
 
 ##User Stories
 * User can record video through webcam on their device.
@@ -37,10 +37,10 @@ https://github.com/collab-project/videojs-recordÂÂ
 * User can have own page.
 
 ##ERD
-![alt tag](http://i.imgur.com/MgMbb69.png =300x)
+![alt tag](http://i.imgur.com/MgMbb69.png width="300")
 
 ##Wireframe
-![alt tag](http://i.imgur.com/a8vaw5h.png =300x)
+![alt tag](http://i.imgur.com/a8vaw5h.png width="300")
 
 ##Unsolved Problems:
 * Storing user videos in a database.
