@@ -26,19 +26,6 @@ angular
       console.log('There was an error getting the users data', response);
     });
 
-    // vm.showUser = function(user) {
-    //   $http({
-    //     method: 'GET',
-    //     url: '/api/users/' + user._id
-    //   }).then(function successCallback(json) {
-    //     $scope.user = json.data;
-    //     console.log("this is response from UsersShowCtrl : ", json)
-    //     vm.user = json.data;
-    //   }, function errorCallback(response) {
-    //     console.log('There was an error getting the users data', response);
-    //   });
-    //
-    // }
 
     vm.createUser = function () {
       $http({

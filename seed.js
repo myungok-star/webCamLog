@@ -7,21 +7,64 @@ var user_lists = [
     profileUrl: "http://i.imgur.com/Rwv0BRw.jpg"
   },
   {
-    userName: "Linda",
-    email: "linda@mail.com",
-    profileUrl: "http://i.imgur.com/h9b3eZe.jpg"
+    userName: "Derry",
+    email: "derry@mail.com",
+    profileUrl: "http://i.imgur.com/6FbobPG.png"
+  },
+  {
+    userName: "Virginia",
+    email: "virginia@mail.com",
+    profileUrl: "http://i.imgur.com/6FbobPG.png"
+  },
+  {
+    userName: "Casey",
+    email: "casey@mail.com",
+    profileUrl: "http://i.imgur.com/6FbobPG.png"
+  },
+  {
+    userName: "Jonathan",
+    email: "jonathan@mail.com",
+    profileUrl: "http://i.imgur.com/6FbobPG.png"
+  },
+  {
+    userName: "Vlad",
+    email: "vlad@mail.com",
+    profileUrl: "http://i.imgur.com/6FbobPG.png"
   }
 ];
 
+
+
 var video_lists = [
   {
-    title: "video log one"
+    title: "Logged by Yasu",
+    screenShot: "http://i.imgur.com/i31yHmV.png",
+    videoLink: ""
   },
   {
-    title: "video log two"
+    title: "Logged by Derry",
+    screenShot: "http://i.imgur.com/jVlA4Jt.png",
+    videoLink: ""
   },
   {
-    title: "video log three"
+    title: "Logged by Casey",
+    screenShot: "http://i.imgur.com/HthwsLX.png",
+    videoLink: "file:///Users/yasuyoshisakamoto/Desktop/videoLogMaterials/your-new-log%20(27).webm"
+  },
+  {
+    title: "Logged by Vlad",
+    screenShot: "http://i.imgur.com/GEDeR1L.png",
+    videoLink: ""
+  },
+  {
+    title: "Logged by Virginia",
+    screenShot: "http://i.imgur.com/3t0bzLi.png",
+    videoLink: ""
+  },
+  {
+    title: "Logged by Jonathan",
+    screenShot: "http://i.imgur.com/rQ0kgtr.png",
+    videoLink: ""
   }
 ];
 

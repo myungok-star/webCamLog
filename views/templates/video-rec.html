@@ -23,19 +23,12 @@
             </div>
           </div>
 
-          <!-- Video input-->
+          <!-- Text input-->
           <div class="form-group">
             <div class="col-xs-6 col-xs-offset-3">
-            <input ng-model="videosIndexCtrl.videoContent" type="hidden" name="videoContent" class="form-control input-md form-reset" value="{{videoContent}}" >
+            <input ng-init="videosIndexCtrl.newVideo.screenShot='http://i.imgur.com/e7djt98.png'" type="hidden" class="form-control input-md form-reset" ng-value="videosIndexCtrl.newVideo.screenShot">
             </div>
           </div>
-
-          <!-- Text input-->
-          <!-- <div class="form-group">
-            <div class="col-xs-6 col-xs-offset-3">
-            <input ng-model="videosIndexCtrl._user" type="text" class="form-control input-md form-reset" placeholder="Profile Image Url">
-            </div>
-          </div> -->
 
           <!-- Button -->
           <div class="form-group">
@@ -46,17 +39,6 @@
         </fieldset>
       </form>
       <br><br><hr>
-      <!-- <div class="col-xs-6 col-xs-offset-3">
-      <h1>File Upload Form</h1>
-        <form id="uploadForm"
-          enctype="multipart/form-data"
-          action="https://api-content.dropbox.com/1/files_put/auto/p2o1rz1ns8hp85r"
-          method="post">
-          <input type="file" name="videoData" value="test string"/>
-          <input type="submit" value="Upload Video" name="submit">
-          <span id = "status"></span>
-        </form>
-      </div> -->
     </div>
   </div>
 
@@ -65,9 +47,9 @@
   <br><br><br>
 
 
+
+
 <script>
-
-
 var videoContent;
 
   var player = videojs('myVideo', {
@@ -122,31 +104,4 @@ var videoContent;
 
     player.recorder.saveAs({'video': 'your-new-log'});
   });
-
-
-</script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-<script>
-$(document).ready(function() {
-
-   $('#uploadForm').submit(function() {
-   $("#status").empty().text("File is uploading...");
-    console.log($('#uploadForm').val());
-      $(this).ajaxSubmit({
-
-          error: function(xhr) {
-              status('Error: ' + xhr.status);
-          },
-
-          success: function(response) {
-        console.log(response)
-        $("#status").empty().text(response);
-          }
-      });
-
-      return false;
-        });
-  }); //end ready
 </script>

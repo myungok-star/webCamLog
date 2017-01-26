@@ -26,13 +26,25 @@ function create(req, res) {
 
 // Get a single video
 function show(req, res) {
-  db.Video.findById(req.params.userId, function(err, foundVideo) {
+  db.Video.findById(req.params.videoId, function(err, foundVideo) {
     if(err) { console.log('videosController.show error', err); }
     console.log('videosController.show responding with', foundVideo);
     res.json(foundVideo);
   });
 }
 
+function update(req, res) {
+  console.log('updating with data', req.body);
+  db.Video.findById(req.params.videoId, function(err, foundVideo) {
+    if(err) { console.log('albumsController.update error', err); }
+    foundVideo.title = req.body.title;
+    // foundVideo.screenShot = req.body.screenShot;
+    foundVideo.save(function(err, savedVideo) {
+      if(err) { console.log('saving altered user info failed'); }
+      res.json(savedVideo);
+    });
+  });
+}
 
 // Delete a current video
   function destroy(req, res) {
